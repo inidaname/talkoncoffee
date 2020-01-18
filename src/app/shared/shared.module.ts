@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 
+import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FlexLayoutModule,
   ],
-  exports: [HeaderComponent]
+  exports: [
+    HeaderComponent,
+    CommonModule,
+    FlexLayoutModule
+  ]
 })
 export class SharedModule { }

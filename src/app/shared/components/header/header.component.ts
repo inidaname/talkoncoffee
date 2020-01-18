@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('showMobile') showMenu: ElementRef<any>;
+  checkLive: boolean;
+
+  constructor() {
+    this.checkLive = false;
+  }
 
   ngOnInit() {
+  }
+
+  checkMobile() {
+    this.checkLive = !this.checkLive;
+    if (!this.checkLive) {
+      this.showMenu.nativeElement.classList.add('nav-list-mobile');
+    } else {
+      this.showMenu.nativeElement.classList.remove('nav-list-mobile');
+    }
   }
 
 }

@@ -7,10 +7,11 @@
     </div>
   </div>
   <nav class="nav">
-    <ul class="nav-list">
-      <li class="list-items nav">Home</li>
-      <li class="list-items nav">Episodes</li>
-      <li class="list-items nav">Blogs</li>
+    <span><img src="/assets/menu.png" id="menu" (click)="checkMobile()"  alt=""></span>
+    <ul #showMobile class="nav-list">
+      <li class="list-items nav"><a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a></li>
+      <li class="list-items nav"><a [routerLink]="['/episodes']" routerLinkActive="router-link-active" >Episodes</a></li>
+      <li class="list-items nav"><a [routerLink]="['/blog']" routerLinkActive="router-link-active">Blogs</a></li>
     </ul>
   </nav>
 </header>

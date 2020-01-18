@@ -1,3 +1,17 @@
+@mixin mQ($arg...) {
+  @if length($arg)==2 {
+      @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)) {
+          @content;
+      }
+  }
+
+  @else {
+      @media screen and (max-width: nth($arg, 1)) {
+          @content;
+      }
+  }
+}
+
 .main-header {
   display: flex;
   flex-direction: row;
@@ -6,6 +20,9 @@
   width: 100vw;
   height: 70px;
   padding: 0 30px;
+  @include mQ('415px') {
+    padding: 2px 5px;
+  }
 }
 .logo {
   width: 210px;
@@ -44,10 +61,35 @@
   flex-direction: row;
   width: 30%;
   justify-content: space-around;
-  font-variant: small-caps;
+  @include mQ('415px') {
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+  }
+  #menu {
+    display: none;
+    @include mQ('415px'){
+      display: inline;
+      width: 40px;
+    }
+  }
   &-list {
-    @extend .nav;
     width: 100%;
+    @include mQ('415px') {
+      display: none;
+    }
+    &-mobile {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      position: absolute;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding: 0;
+      border: 1px solid #000;
+      top: 55px;
+      right: 0;
+    }
   }
 }
 
@@ -55,4 +97,8 @@
   font-size: 16px;
   font-weight: 600;
   font-family: 'Public Sans', sans-serif;
+  @include mQ('415px') {
+    width: 200px;
+    border: 1px solid #000;
+  }
 }
