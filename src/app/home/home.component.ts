@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.links$.subscribe(e => console.log(e))
+    this.links$.subscribe(e => console.log(e));
   }
 
 }
