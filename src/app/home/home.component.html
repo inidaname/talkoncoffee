@@ -14,10 +14,17 @@
   </section>
   <section class="list-tabs">
     <ul>
-      <li>Episodes</li>
-      <li>Book Reviews</li>
-      <li>Tech Talks</li>
+      <li>
+        <a [routerLink]="[ '/' ]" routerLinkActive="active">Episodes</a>
+      </li>
+      <li>
+        <a [routerLink]="[ '/book-review' ]" routerLinkActive="active">Book Reviews</a>
+      </li>
+      <li>
+        <a [routerLink]="[ '/tech-talk' ]" routerLinkActive="active">Tech Talks</a>
+      </li>
     </ul>
   </section>
   <router-outlet></router-outlet>
 </main>
+<app-footer></app-footer>
