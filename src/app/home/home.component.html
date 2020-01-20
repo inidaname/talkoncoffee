@@ -5,17 +5,24 @@
       <img src="/assets/mine.jpg" class="albumart-image rounded shadow" alt="Art Album">
     </div>
     <div class="intro">
-      <h2>Hassan Sani <small>The Host</small></h2>
+      <h2>{{(Podcast | async)?.author}} <small>The Host</small></h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi asperiores laboriosam sed. Ipsum, aliquam, nam eum labore, sint nemo fugiat corporis praesentium tempora corrupti quam perferendis nisi tempore quo. Officiis.
       </p>
-      <span>trailer</span>
+      <ng-container *ngIf="trailer$ | async as trailer">
+        <audio controls>
+          <source [src]="trailer?.enclosure.link" [type]="trailer?.enclosure.type">
+          <p>Your browser doesn't support HTML5 audio. Here is a <a [href]="trailer?.enclosure.link">link to the
+              audio</a> instead.</p>
+        </audio>
+      </ng-container>
+      
     </div>
   </section>
   <section class="list-tabs">
     <ul>
       <li>
-        <a [routerLink]="[ '/' ]" routerLinkActive="active">Episodes</a>
+        <a [routerLink]="[ '/episodes' ]" routerLinkActive="active">Episodes</a>
       </li>
       <li>
         <a [routerLink]="[ '/book-review' ]" routerLinkActive="active">Book Reviews</a>

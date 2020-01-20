@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    ComponentsModule
+    ComponentsModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,

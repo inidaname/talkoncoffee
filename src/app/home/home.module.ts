@@ -10,7 +10,12 @@ import { TechTalkComponent } from './tech-talk/tech-talk.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, EpisodesComponent, BookReviewComponent, TechTalkComponent],
+  declarations: [
+    HomeComponent,
+    EpisodesComponent,
+    BookReviewComponent,
+    TechTalkComponent
+  ],
   imports: [
     HomeRoutingModule,
     SharedModule

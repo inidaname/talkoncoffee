@@ -1,0 +1,46 @@
+@mixin flexBox ($dir: column, $aitem: center, $jsc: space-around) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jsc;
+  align-items: $aitem;
+}
+
+
+
+article {
+  border: 1px solid #000;
+  width: 95vw;
+}
+
+.list {
+  list-style: none;
+  @include flexBox($aitem: flex-start);
+  width: 75%;
+  margin: 0 auto;
+  &-group {
+    @include flexBox();
+    border: 1px solid #000;
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+
+.container {
+  @include flexBox($dir: row);
+  border: 1px solid #000;
+  width: 100%;
+  :nth-child(2) {
+    border: 1px solid #000;
+    flex-grow: 2;
+  }
+}
+
+.row {
+  @include flexBox();
+  flex-grow: 1;
+  &-image {
+    width: 200px;
+  }
+}
+

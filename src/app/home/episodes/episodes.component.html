@@ -1,1 +1,25 @@
-<p>episodes works!</p>
+<article>
+  <ul class="list">
+    <li class="list-group" *ngFor="let item of episodes$ | async">
+      <ng-container *ngIf="image === item.thumbnail">
+        <h4>{{ item.title }}</h4>
+        <section class="container">
+          <div class="row">
+            <img [src]="item.thumbnail" class="row-image" [alt]="item.title">
+          </div>
+          <div class="row">
+            <div>
+              <audio controls>
+                <source [src]="item.enclosure.link" [type]="item.enclosure.type">
+                <p>Your browser doesn't support HTML5 audio. Here is a <a [href]="item.enclosure.link">link to the
+                    audio</a> instead.</p>
+              </audio>
+            </div>
+            <div [innerHTML]="item.description">
+            </div>
+          </div>
+        </section>
+      </ng-container>
+    </li>
+  </ul>
+</article>

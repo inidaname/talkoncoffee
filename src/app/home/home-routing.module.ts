@@ -9,13 +9,13 @@ import { TechTalkComponent } from './tech-talk/tech-talk.component';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: '/'
+  },
+  {
+    path: '',
     component: HomeComponent,
     children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'episodes'
-      },
       {
         path: 'episodes',
         component: EpisodesComponent
