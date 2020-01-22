@@ -1,7 +1,6 @@
 <article>
   <ul class="list">
     <li class="list-group" *ngFor="let item of episodes$ | async">
-      <ng-container *ngIf="image === item.thumbnail">
         <h4>{{ item.title }}</h4>
         <section class="container">
           <div class="row">
@@ -19,7 +18,6 @@
             </div>
           </div>
         </section>
-      </ng-container>
     </li>
   </ul>
 </article>

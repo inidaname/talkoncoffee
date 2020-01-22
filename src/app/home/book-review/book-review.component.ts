@@ -17,8 +17,7 @@ export class BookReviewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.episodes$ = this.rssfeed.getFeeds();
-    this.episodes$.subscribe(e => console.log(e))
+    this.episodes$ = this.rssfeed.getFeeds('bookreviews');
   }
 
 }

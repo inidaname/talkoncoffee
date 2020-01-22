@@ -1,5 +1,19 @@
 <app-header></app-header>
 <main class="main">
+  <section class="list-tabs">
+    <ul>
+      <li>
+        <a [routerLink]="[ '/episodes' ]" routerLinkActive="active">Episodes</a>
+      </li>
+      <li>
+        <a [routerLink]="[ '/book-review' ]" routerLinkActive="active">Book Reviews</a>
+      </li>
+      <li>
+        <a [routerLink]="[ '/tech-talk' ]" routerLinkActive="active">Tech Talks</a>
+      </li>
+    </ul>
+  </section>
+  <router-outlet></router-outlet>
   <section class="topside">
     <div class="albumart">
       <img src="/assets/mine.jpg" class="albumart-image rounded shadow" alt="Art Album">
@@ -16,22 +30,8 @@
               audio</a> instead.</p>
         </audio>
       </ng-container>
-      
+
     </div>
   </section>
-  <section class="list-tabs">
-    <ul>
-      <li>
-        <a [routerLink]="[ '/episodes' ]" routerLinkActive="active">Episodes</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/book-review' ]" routerLinkActive="active">Book Reviews</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/tech-talk' ]" routerLinkActive="active">Tech Talks</a>
-      </li>
-    </ul>
-  </section>
-  <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
