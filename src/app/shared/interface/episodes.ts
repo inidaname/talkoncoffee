@@ -8,6 +8,7 @@ export interface Episodes {
   description: string;
   content: string;
   enclosure: Enclosure;
+  permLink: string;
   categories: any[];
 }
 

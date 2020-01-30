@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { BookReviewComponent } from './book-review/book-review.component';
 import { TechTalkComponent } from './tech-talk/tech-talk.component';
+import { EmptyComponent } from '../shared/components/empty/empty.component';
 
 const routes: Routes = [
   {
@@ -18,14 +19,20 @@ const routes: Routes = [
     children: [
       {
         path: 'episodes',
-        component: EpisodesComponent
+        component: EpisodesComponent,
+        children: [
+          {
+            path: ':id',
+            component: EmptyComponent
+          }
+        ]
       },
       {
-        path: 'book-review',
+        path: 'bookreview',
         component: BookReviewComponent
       },
       {
-        path: 'tech-talk',
+        path: 'techtalk',
         component: TechTalkComponent
       }
     ]

@@ -3,7 +3,7 @@ import { ShareDataService } from '../../service/share-data.service';
 import { Observable } from 'rxjs';
 import { Episodes } from '../../interface/episodes';
 import { faCoffee, faPlay, faVolumeUp, faVolumeDown, faPause, faStop } from '@fortawesome/free-solid-svg-icons';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 function formatTime(timeInSeconds) {
@@ -41,20 +41,15 @@ export class PlayerComponent implements OnInit, AfterViewChecked {
 
   constructor(
     private shareEp: ShareDataService,
-    private route: ActivatedRoute
   ) {
     this.valuNumber = 0;
   }
 
   ngOnInit() {
-    this.route.paramMap.subscribe(param => {
-      console.log(param)
-    })
   }
 
   ngAfterViewChecked() {
     this.play = this.shareEp.currentEpisode;
-    this.play.subscribe(e => console.log(e))
   }
 
   setTimeContent(event) {

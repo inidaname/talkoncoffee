@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlayerComponent } from './components/player/player.component';
 import { TimeLineDirective } from './directives/time-line.directive';
+import { EmptyComponent } from './components/empty/empty.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TimeLineDirective } from './directives/time-line.directive';
     HeaderComponent,
     FooterComponent,
     PlayerComponent,
-    TimeLineDirective
+    TimeLineDirective,
+    EmptyComponent
   ],
   imports: [
     CommonModule,

@@ -23,5 +23,4 @@ export class HomeComponent implements OnInit {
     this.trailer$ = this.feed.getTrailer();
     this.Podcast = this.feed.getFeedDetails();
   }
-
 }

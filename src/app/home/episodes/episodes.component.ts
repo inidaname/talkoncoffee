@@ -19,6 +19,7 @@ export class EpisodesComponent implements OnInit {
 
   ngOnInit() {
     this.episodes$ = this.rssfeed.getFeeds('interviews');
+
   }
 
   sendEpisode(episode: Episodes) {
