@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Public+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Public+Sans&display=swap');
 @mixin mQ($arg...) {
   @if length($arg)==2 {
       @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)) {
@@ -18,4 +18,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: none;
+}
+
+body {
+  background: lighten(#6f4e37, 65);
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
 }

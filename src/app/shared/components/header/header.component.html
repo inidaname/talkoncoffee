@@ -9,8 +9,10 @@
   <nav class="nav">
     <span><img src="/assets/menu.png" id="menu" (click)="checkMobile()"  alt=""></span>
     <ul #showMobile class="nav-list">
-      <li class="list-items nav"><a [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a></li>
-      <li class="list-items nav"><a [routerLink]="['/blog']" routerLinkActive="router-link-active">Blogs</a></li>
+      <li class="list-items nav"><a [routerLink]="['/']" routerLinkActive="active" >Home</a></li>
+      <li class="list-items nav"><a [routerLink]="['/blog']" routerLinkActive="active">Blogs</a></li>
+      <li class="list-items nav"><a [routerLink]="['/contact']" routerLinkActive="active">Contact Us</a></li>
+      <li class="list-items nav"><a [routerLink]="['/subscribe']" class="btn" routerLinkActive="active">Subscribe</a></li>
     </ul>
   </nav>
 </header>

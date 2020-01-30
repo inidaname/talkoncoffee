@@ -58,10 +58,12 @@
   }
 }
 
+nav{
+  width: 50%;
+}
 .nav {
   display: inline-flex;
   flex-direction: row;
-  width: 30%;
   justify-content: space-around;
   @include mQ('415px') {
     justify-content: flex-end;
@@ -76,7 +78,10 @@
     }
   }
   &-list {
-    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+      width: 100%;
     @include mQ('415px') {
       display: none;
     }
@@ -96,9 +101,19 @@
 }
 
 .list-items {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   font-family: 'Public Sans', sans-serif;
+  text-transform: uppercase;
+  a {
+    color: #6f4e37;
+    &:hover {
+      color: #c8ad90;
+    }
+  }
+  .active {
+    color: #3b2f2f;
+  }
   @include mQ('415px') {
     width: 200px;
     border: 1px solid #000;
