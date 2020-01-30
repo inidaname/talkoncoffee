@@ -3,7 +3,7 @@
     <li class="list-group" *ngFor="let item of episodes$ | async">
         <h4>{{ item.title }}</h4>
         <section class="container">
-          <div class="row">
+          <div class="row" (click)="sendEpisode(item)">
             <img [src]="item.thumbnail" class="row-image" [alt]="item.title">
           </div>
           <div class="row">
