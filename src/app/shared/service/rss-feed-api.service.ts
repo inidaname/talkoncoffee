@@ -10,7 +10,7 @@ function genLink(episodeTitle: string): string {
     if (!e.match('[^A-Za-z0-9 ]')) {
       return e;
     }
-  }).join('').split('  ').join(' ').split(' ').join('_').split('__').join('_')
+  }).join('').split('  ').join(' ').split(' ').join('_').split('__').join('_');
 }
 
 @Injectable({
@@ -84,7 +84,6 @@ export class RssFeedApiService {
         map(data => {
           return data.items.find((v: Episodes) => {
             if (permLink === genLink(v.title)) {
-              console.log(v)
               return v;
             }
           });
