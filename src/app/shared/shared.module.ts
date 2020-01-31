@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlayerComponent } from './components/player/player.component';
 import { TimeLineDirective } from './directives/time-line.directive';
 import { EmptyComponent } from './components/empty/empty.component';
+import { SocialsComponent } from './components/socials/socials.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { EmptyComponent } from './components/empty/empty.component';
     FooterComponent,
     PlayerComponent,
     TimeLineDirective,
-    EmptyComponent
+    EmptyComponent,
+    SocialsComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { EmptyComponent } from './components/empty/empty.component';
     ComponentsModule,
     PlayerComponent,
     FontAwesomeModule,
-    TimeLineDirective
+    TimeLineDirective,
+    SocialsComponent
   ]
 })
 export class SharedModule { }

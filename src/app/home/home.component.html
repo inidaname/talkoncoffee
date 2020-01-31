@@ -16,14 +16,14 @@
     </ul>
   </section>
   <router-outlet></router-outlet>
+  <hr>
   <section class="topside">
     <div class="albumart">
       <img src="/assets/mine.jpg" class="albumart-image rounded shadow" alt="Art Album">
     </div>
-    <div class="intro">
+    <div class="intro shadow rounded">
       <h2>{{(Podcast | async)?.author}} <small>The Host</small></h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi asperiores laboriosam sed. Ipsum, aliquam, nam eum labore, sint nemo fugiat corporis praesentium tempora corrupti quam perferendis nisi tempore quo. Officiis.
+      <p [innerHTML]="(Podcast | async)?.description">
       </p>
       <ng-container *ngIf="trailer$ | async as trailer">
         <audio controls>

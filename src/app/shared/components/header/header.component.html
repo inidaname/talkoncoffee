@@ -1,18 +1,37 @@
+<app-socials></app-socials>
 <header class="main-header">
-  <div class="logo">
-    <img src="/assets/logo.png" class="logo-image" alt="An Illustration of Coffee Mug">
-    <div class="logo-name">
-      <h1 class="title"><span>Talk</span> On Coffee</h1>
-      <h2 class="sub-title">With Hassan Sani</h2>
+  <a [routerLink]="['/']" class="no-color">
+    <div class="logo">
+      <img
+        src="/assets/logo.png"
+        class="logo-image"
+        alt="An Illustration of Coffee Mug"
+      />
+      <div class="logo-name">
+        <h1 class="title"><span>Talk</span> On Coffee</h1>
+        <h2 class="sub-title">With Hassan Sani</h2>
+      </div>
     </div>
-  </div>
+  </a>
   <nav class="nav">
-    <span><img src="/assets/menu.png" id="menu" (click)="checkMobile()"  alt=""></span>
+    <span
+      ><img src="/assets/menu.png" id="menu" (click)="checkMobile()" alt=""
+    /></span>
     <ul #showMobile class="nav-list">
-      <li class="list-items nav"><a [routerLink]="['/']" routerLinkActive="active" >Home</a></li>
-      <li class="list-items nav"><a [routerLink]="['/blog']" routerLinkActive="active">Blogs</a></li>
-      <li class="list-items nav"><a [routerLink]="['/contact']" routerLinkActive="active">Contact Us</a></li>
-      <li class="list-items nav"><a [routerLink]="['/subscribe']" class="btn" routerLinkActive="active">Subscribe</a></li>
+      <li class="list-items nav">
+        <a [routerLink]="['/']" routerLinkActive="active">Home</a>
+      </li>
+      <li class="list-items nav">
+        <a [routerLink]="['/blog']" routerLinkActive="active">Blogs</a>
+      </li>
+      <li class="list-items nav">
+        <a [routerLink]="['/contact']" routerLinkActive="active">Contact Us</a>
+      </li>
+      <li class="list-items nav">
+        <a [routerLink]="['/subscribe']" class="btn" routerLinkActive="active"
+          >Subscribe</a
+        >
+      </li>
     </ul>
   </nav>
 </header>

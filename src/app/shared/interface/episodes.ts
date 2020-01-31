@@ -39,3 +39,9 @@ interface Rating {
   scheme: string;
   value: string;
 }
+
+export interface socialLinks {
+  name: string;
+  link: string;
+  icon?: string;
+}
