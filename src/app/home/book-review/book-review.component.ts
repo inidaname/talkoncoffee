@@ -10,7 +10,6 @@ import { RssFeedApiService } from 'src/app/shared/service/rss-feed-api.service';
 export class BookReviewComponent implements OnInit {
 
   episodes$: Observable<Episodes[]>;
-  image = `https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_episode/2421776/2421776-1579429638253-7eadae45881d4.jpg`;
 
   constructor(
     private rssfeed: RssFeedApiService

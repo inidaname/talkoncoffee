@@ -1,14 +1,14 @@
 <article>
+  <router-outlet></router-outlet>
   <ul class="list">
-    <li class="list-group" *ngFor="let item of episodes$ | async">
-      <h4>{{ item.title }}</h4>
+    <li class="list-group shadow rounded" *ngFor="let item of episodes$ | async">
+      <h4> <a [routerLink]="['./', item.permLink]"
+        routerLinkActive="router-link-active"> {{ item.title }} </a></h4>
       <section class="container">
-        <div class="row">
           <img [src]="item.thumbnail" class="row-image" [alt]="item.title" />
-        </div>
         <div class="row">
           <div>
-            <audio controls>
+            <!-- <audio controls>
               <source
                 [src]="item.enclosure.link"
                 [type]="item.enclosure.type"
@@ -17,9 +17,9 @@
                 Your browser doesn't support HTML5 audio. Here is a
                 <a [href]="item.enclosure.link">link to the audio</a> instead.
               </p>
-            </audio>
+            </audio> -->
           </div>
-          <div [innerHTML]="item.description"></div>
+          <div [innerHTML]="item.description | urlShorter"></div>
         </div>
       </section>
     </li>

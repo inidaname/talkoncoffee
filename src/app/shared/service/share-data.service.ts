@@ -15,7 +15,7 @@ export class ShareDataService {
     this.currentEpisode = this.episodeSubject.asObservable();
   }
 
-  public receiveEpisode(episode: Episodes){
+  public receiveEpisode(episode: Episodes) {
     this.episodeSubject.next(episode);
   }
 }

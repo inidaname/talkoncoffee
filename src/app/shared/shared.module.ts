@@ -13,6 +13,7 @@ import { PlayerComponent } from './components/player/player.component';
 import { TimeLineDirective } from './directives/time-line.directive';
 import { EmptyComponent } from './components/empty/empty.component';
 import { SocialsComponent } from './components/socials/socials.component';
+import { UrlShorterPipe } from './pipes/url-shorter.pipe';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SocialsComponent } from './components/socials/socials.component';
     PlayerComponent,
     TimeLineDirective,
     EmptyComponent,
-    SocialsComponent
+    SocialsComponent,
+    UrlShorterPipe
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { SocialsComponent } from './components/socials/socials.component';
     PlayerComponent,
     FontAwesomeModule,
     TimeLineDirective,
-    SocialsComponent
+    SocialsComponent,
+    UrlShorterPipe
   ]
 })
 export class SharedModule { }

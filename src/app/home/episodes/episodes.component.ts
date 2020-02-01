@@ -14,18 +14,10 @@ export class EpisodesComponent implements OnInit {
 
   constructor(
     private rssfeed: RssFeedApiService,
-    private shareEpisode: ShareDataService
   ) { }
 
   ngOnInit() {
     this.episodes$ = this.rssfeed.getFeeds('interviews');
 
   }
-
-  sendEpisode(episode: Episodes) {
-    if (episode) {
-      this.shareEpisode.receiveEpisode(episode);
-    }
-  }
-
 }

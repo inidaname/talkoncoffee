@@ -29,11 +29,23 @@ const routes: Routes = [
       },
       {
         path: 'bookreview',
-        component: BookReviewComponent
+        component: BookReviewComponent,
+        children: [
+          {
+            path: ':id',
+            component: EmptyComponent
+          }
+        ]
       },
       {
         path: 'techtalk',
-        component: TechTalkComponent
+        component: TechTalkComponent,
+        children: [
+          {
+            path: ':id',
+            component: EmptyComponent
+          }
+        ]
       }
     ]
   }

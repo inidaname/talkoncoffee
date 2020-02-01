@@ -34,6 +34,10 @@ article {
   }
 }
 
+hr {
+  width: 100%;
+}
+
 
 .container {
   @include flexBox($dir: row);
@@ -48,6 +52,6 @@ article {
     @extend .shadow;
     @extend .rounded;
   }
-  line-height: 20px;
+  line-height: 25px;
  }
 
