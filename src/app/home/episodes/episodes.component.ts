@@ -4,6 +4,8 @@ import { Episodes, FeedReturn } from 'src/app/shared/interface/episodes';
 import { RssFeedApiService } from 'src/app/shared/service/rss-feed-api.service';
 import { ShareDataService } from 'src/app/shared/service/share-data.service';
 
+declare var ng: any;
+
 @Component({
   templateUrl: './episodes.component.html',
   styleUrls: ['./episodes.component.scss']

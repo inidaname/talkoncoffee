@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { RssFeedApiService } from '../shared/service/rss-feed-api.service';
 import { Episodes, Feed } from '../shared/interface/episodes';
 
+declare var ng: any;
+
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
