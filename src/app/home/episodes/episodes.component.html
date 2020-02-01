@@ -1,21 +1,19 @@
 <article>
   <router-outlet></router-outlet>
   <ul class="list">
-    <li class="list-group" *ngFor="let item of episodes$ | async">
+    <li class="list-group shadow rounded" *ngFor="let item of episodes$ | async">
         <h4> <a [routerLink]="['./', item.permLink]"
         routerLinkActive="router-link-active"> {{ item.title }} </a></h4>
         <section class="container">
-          <div class="row" (click)="sendEpisode(item)">
             <img [src]="item.thumbnail" class="row-image" [alt]="item.title">
-          </div>
           <div class="row">
-            <div>
+            <!-- <div>
               <audio controls>
                 <source [src]="item.enclosure.link" [type]="item.enclosure.type">
                 <p>Your browser doesn't support HTML5 audio. Here is a <a [href]="item.enclosure.link">link to the
                     audio</a> instead.</p>
               </audio>
-            </div>
+            </div> -->
             <div [innerHTML]="item.description">
             </div>
           </div>

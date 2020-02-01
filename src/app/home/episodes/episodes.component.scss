@@ -5,10 +5,15 @@
   align-items: $aitem;
 }
 
+.shadow {
+  box-shadow: 0px 0px 2px #ccc;
+}
 
+.rounded {
+  border-radius: 6px;
+}
 
 article {
-  border: 1px solid #000;
   width: 95vw;
 }
 
@@ -18,29 +23,31 @@ article {
   width: 75%;
   margin: 0 auto;
   &-group {
+    h4 {
+      font-variant: small-caps;
+      letter-spacing: 3px;
+    }
     @include flexBox();
-    border: 1px solid #000;
     width: 100%;
     padding: 20px;
+    margin: 21px auto;
   }
 }
 
 
 .container {
   @include flexBox($dir: row);
-  border: 1px solid #000;
   width: 100%;
-  :nth-child(2) {
-    border: 1px solid #000;
-    flex-grow: 2;
-  }
 }
 
 .row {
   @include flexBox();
-  flex-grow: 1;
+  width: 70%;
   &-image {
     width: 200px;
+    @extend .shadow;
+    @extend .rounded;
   }
-}
+  line-height: 20px;
+ }
 

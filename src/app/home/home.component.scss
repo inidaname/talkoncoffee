@@ -64,8 +64,15 @@ hr {
 .list-tabs {
   width: 100%;
   padding-top: 20px;
+  margin-bottom: 21px;
   ul {
     @include flexBox($dir: row);
     list-style: none;
+    .link-item a {
+      font-family: 'Public Sans', sans-serif;
+      font-weight: 600;
+
+      color: #3b2f2f;
+    }
   }
 }
