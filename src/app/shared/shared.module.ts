@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ComponentsModule} from '@scullyio/ng-lib';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
@@ -30,7 +29,6 @@ import { UrlShorterPipe } from './pipes/url-shorter.pipe';
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    ComponentsModule,
     HttpClientModule,
     FontAwesomeModule
   ],
@@ -39,7 +37,6 @@ import { UrlShorterPipe } from './pipes/url-shorter.pipe';
     CommonModule,
     FlexLayoutModule,
     FooterComponent,
-    ComponentsModule,
     PlayerComponent,
     FontAwesomeModule,
     TimeLineDirective,
