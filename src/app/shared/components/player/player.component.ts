@@ -33,7 +33,7 @@ export class PlayerComponent implements OnInit, AfterViewChecked {
   faStop = faStop;
   trackLength: number;
   @ViewChild('seeker') seeker: ElementRef;
-  @ViewChild('seekTooltip') seekTooltip: ElementRef;
+  // @ViewChild('seekTooltip') seekTooltip: ElementRef;
   @ViewChild('progressAmount') progressAmount: ElementRef;
   @ViewChild('timeelapse') timeelapse: ElementRef;
   @ViewChild('duration') duration: ElementRef;
@@ -61,39 +61,39 @@ export class PlayerComponent implements OnInit, AfterViewChecked {
   }
 
   skipAhead(event, audio) {
-    const skipTo = event.target.dataset.seek;
+    const skipTo = event.target.valueAsNumber;
+    console.log(skipTo)
     audio.currentTime = skipTo;
     this.progressAmount.nativeElement.style.width = (skipTo / audio.duration) * 100 + '%';
     this.seeker.nativeElement.value = skipTo;
   }
 
-  updateSeekTooltip(event, audio) {
-    const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(event.target.getAttribute('max'), 10));
-    this.seeker.nativeElement.setAttribute('data-seek', skipTo);
-    this.progressAmount.nativeElement.setAttribute('data-seek', skipTo)
-    const t = formatTime(skipTo);
-    this.seekTooltip.nativeElement.textContent = `${t.minutes}:${t.seconds}`;
-    const rect = audio.getBoundingClientRect();
-    this.seekTooltip.nativeElement.style.left = `${event.pageX - rect.left}px`;
-  }
+  // updateSeekTooltip(event, audio) {
+  //   const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(event.target.getAttribute('max'), 10));
+  //   this.seeker.nativeElement.setAttribute('data-seek', skipTo);
+  //   this.progressAmount.nativeElement.setAttribute('data-seek', skipTo)
+  //   const t = formatTime(skipTo);
+  //   this.seekTooltip.nativeElement.textContent = `${t.minutes}:${t.seconds}`;
+  //   const rect = audio.getBoundingClientRect();
+  //   this.seekTooltip.nativeElement.style.left = `${event.pageX - rect.left}px`;
+  // }
 
-  updateSeektip(event, audio) {
-    if (event.offsetX > 0 && event.target.clientWidth > 0) {
-      const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(this.seeker.nativeElement.getAttribute('max'), 10));
-      const t = formatTime(skipTo);
-      this.seekTooltip.nativeElement.textContent = `${t.minutes}:${t.seconds}`;
-    }
-    const rect = audio.getBoundingClientRect();
-    this.seekTooltip.nativeElement.style.left = `${event.pageX - rect.left}px`;
-
-  }
+  // updateSeektip(event, audio) {
+  //   if (event.offsetX > 0 && event.target.clientWidth > 0) {
+  //     const skipTo = Math.round((event.offsetX / event.target.clientWidth) * parseInt(this.seeker.nativeElement.getAttribute('max'), 10));
+  //     const t = formatTime(skipTo);
+  //     this.seekTooltip.nativeElement.textContent = `${t.minutes}:${t.seconds}`;
+  //   }
+  //   const rect = audio.getBoundingClientRect();
+  //   this.seekTooltip.nativeElement.style.left = `${event.pageX - rect.left}px`;
+  // }
 
   volume(player: HTMLAudioElement, reason: string) {
-    if (reason === 'add') {
+    if (reason === 'add' && player.volume <= 0.9) {
       player.volume += 0.1;
     }
 
-    if (reason === 'down') {
+    if (reason === 'down' && player.volume >= 0.1) {
       player.volume -= 0.1;
     }
   }

@@ -13,20 +13,46 @@
   border-radius: 12px;
 }
 
-.play {
+.player {
   width: 80vw;
   margin: 0 auto;
   padding: 18px;
   @include flexBox();
-}
+  &-section {
+    @include flexBox($dir: row);
+    width: 100%;
+  }
+  &-controls {
+    @include flexBox($jsc: space-around);
+    border: 1px solid #6f4e37;
+    align-self: stretch;
+    width: 60%;
+    margin: 12px;
+    padding: 12px;
+    @extend .shadow;
+    @extend .rounded;
+  }
+  &-control {
+    width: 100%;
+    @include flexBox($dir: row, $jsc: space-around);
+    button {
+      height: 31px;
+      width: 41px;
+      border: 0;
+      margin: 12px;
+      @extend .shadow
+    }
+    fa-icon{
+      color: red;
+    }
+  }
 
-progress {
-  width: 100%;
-  background: #000;
 }
 
 .thumbnail {
   width: 234px;
+  @extend .shadow;
+  @extend .rounded;
 }
 
 .buffered {
@@ -45,6 +71,10 @@ progress {
 
 #seeker {
   display: block;
+}
+
+.seek {
+  margin-top: 12px;
 }
 
 .progress {

@@ -46,7 +46,7 @@ export class TimeLineDirective {
   onUpdate(audio: HTMLAudioElement) {
     const audioDuration = Math.round(audio.currentTime);
     const time = formatTime(audioDuration);
-    this.timeElapse.emit(`${time.minutes}m ${time.seconds}s`)
+    this.timeElapse.emit(`${time.minutes}:${time.seconds}`);
     const duration = audio.duration;
     if (duration > 0) {
       this.sendThis.emit(((audio.currentTime / duration) * 100));

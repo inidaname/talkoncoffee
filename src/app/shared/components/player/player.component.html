@@ -1,33 +1,34 @@
 
-<section class="play shadow roudned" *ngIf="play | async as episode">
-  <audio [src]="episode.enclosure.link" #player autoplay preload="auto" appTimeLine
+<section class="player shadow roudned" *ngIf="play | async as episode">
+  <audio [src]="episode.enclosure.link" #player preload="auto" appTimeLine
   (duration)="setTimeContent($event)"
   (timeElapse)="setTimeElapse($event)"
   (lengthMax)="buffered(bufferedAmount, $event)"
   (sendThis)="checkThis(progressAmount, $event)"></audio>
   <div class="player-section" [ngStyle]="{'display: none;': !episode}">
     <img [src]="episode.thumbnail" [alt]="episode.title" class="thumbnail">
-    <div class="player-control">
-      <button (click)="player?.play()"><fa-icon [icon]="faPlay"></fa-icon></button>
-      <button (click)="player?.pause()"><fa-icon [icon]="faPause"></fa-icon></button>
-      <button (click)="volume(player, 'down')"><fa-icon [icon]="faVolumeDown"></fa-icon></button>
-      <button (click)="volume(player, 'add')"><fa-icon [icon]="faVolumeUp"></fa-icon></button>
-    </div>
-    <div class="buffered">
-      <span #bufferedAmount id="buffered-amount"></span>
-    </div>
-    <div class="progress" (mousemove)="updateSeektip($event, seeker)">
-      <span #progressAmount id="progress-amount"></span>
-      <input class="seek" #seeker (input)="skipAhead($event, player)" width="90%" (mousemove)="updateSeekTooltip($event, player)" id="seek" [value]="valuNumber" min="0" [max]="episode.enclosure.duration" type="range" step="1">
-      <div class="seek-tooltip" #seekTooltip>00:00</div>
-    </div>
-    <div class="time">
-      <time #timeelapse id="timeelapse">00:00</time>
-      <span> / </span>
-      <time #duration id="duration">00:00</time>
+    <div class="player-controls">
+      <div class="player-control">
+        <button (click)="player?.play()"><fa-icon [icon]="faPlay"></fa-icon></button>
+        <button (click)="player?.pause()"><fa-icon [icon]="faPause"></fa-icon></button>
+        <button (click)="volume(player, 'down')"><fa-icon [icon]="faVolumeDown"></fa-icon></button>
+        <button (click)="volume(player, 'add')"><fa-icon [icon]="faVolumeUp"></fa-icon></button>
+      </div>
+      <div class="seeker">
+        <div class="buffered">
+          <span #bufferedAmount id="buffered-amount"></span>
+        </div>
+        <div class="progress">
+          <span #progressAmount id="progress-amount"></span>
+          <input class="seek" #seeker (input)="skipAhead($event, player)" id="seek" [value]="valuNumber" min="0" [max]="episode.enclosure.duration" type="range" step="1">
+          <!-- <div class="seek-tooltip" #seekTooltip>00:00</div> -->
+        </div>
+      </div>
+      <div class="time">
+        <time #timeelapse id="timeelapse">00:00</time>
+        <span> / </span>
+        <time #duration id="duration">00:00</time>
+      </div>
     </div>
   </div>
-  <!-- <div class="details">
-    Show Dates
-  </div> -->
 </section>

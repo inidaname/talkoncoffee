@@ -60,7 +60,6 @@ export class RssFeedApiService {
       .get<FeedReturn>(`${this.api}`)
       .pipe(
         map(data => {
-          console.log(data)
           return data.items[data.items.length - 1];
         }),
         catchError(this.handleError)
