@@ -1,3 +1,17 @@
+@mixin mQ($arg...) {
+  @if length($arg)==2 {
+      @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)) {
+          @content;
+      }
+  }
+
+  @else {
+      @media screen and (max-width: nth($arg, 1)) {
+          @content;
+      }
+  }
+}
+
 @mixin flexBox ($dir: column, $aitem: center, $jsc: space-around) {
   display: flex;
   flex-direction: $dir;
@@ -21,6 +35,9 @@ article {
   list-style: none;
   @include flexBox($aitem: flex-start);
   width: 75%;
+  @include mQ('200px', '550px') {
+    width: 95%;
+  }
   margin: 0 auto;
   &-group {
     h4 {
@@ -44,6 +61,7 @@ article {
 
 .container {
   @include flexBox($dir: row);
+  @include flexBox();
   width: 100%;
 }
 
