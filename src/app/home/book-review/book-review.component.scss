@@ -45,6 +45,14 @@ hr {
   margin: 31px auto;
 }
 
+.subtitle {
+  color: #333;
+  font-weight: 400;
+  line-height: 23px;
+  font-size: 16px;
+  margin-bottom: 21px;
+}
+
 .row {
   @include flexBox();
   width: 70%;

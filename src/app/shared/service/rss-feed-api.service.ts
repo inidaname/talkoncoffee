@@ -30,6 +30,7 @@ export class RssFeedApiService {
       .get<FeedReturn>(`${this.api}`)
       .pipe(
         map((data: FeedReturn) => {
+          console.log(data.items)
           data.items.pop();
           if (type === 'interviews') {
             const episodes = data.items.filter((v: Episodes) => {

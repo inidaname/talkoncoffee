@@ -4,6 +4,7 @@
     <li class="list-group shadow rounded" *ngFor="let item of episodes$ | async">
         <h4> <a [routerLink]="['./', item.permLink]"
         routerLinkActive="router-link-active"> {{ item.title }} </a></h4>
+        <p class="subtitle">Published Date: {{item.pubDate | date}}</p>
         <section class="container">
             <img [src]="item.thumbnail" class="row-image" [alt]="item.title">
           <div class="row">
