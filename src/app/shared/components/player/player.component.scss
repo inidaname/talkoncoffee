@@ -5,6 +5,20 @@
   align-items: $aitem;
 }
 
+@mixin mQ($arg...) {
+  @if length($arg)==2 {
+      @media screen and (min-width: nth($arg, 1)) and (max-width: nth($arg, 2)) {
+          @content;
+      }
+  }
+
+  @else {
+      @media screen and (max-width: nth($arg, 1)) {
+          @content;
+      }
+  }
+}
+
 .shadow {
   box-shadow: 2px 2px 5px #ccc;
 }
@@ -20,6 +34,9 @@
   @include flexBox();
   &-section {
     @include flexBox($dir: row);
+    @include mQ('200px', '550px') {
+      @include flexBox($dir: column);
+    }
     width: 100%;
   }
   &-controls {
@@ -31,6 +48,9 @@
     padding: 12px;
     @extend .shadow;
     @extend .rounded;
+    @include mQ('200px', '500px'){
+      width: 90%;
+    }
   }
   &-control {
     width: 100%;
@@ -60,6 +80,9 @@
   position: relative;
   background: #555;
   width: 300px;
+  @include mQ('200px', '500px') {
+    width: 90%;
+  }
 }
 
 #buffered-amount {
@@ -82,6 +105,12 @@
   height: 20px;
   position: relative;
   width: 300px;
+  @include mQ('200px', '500px'){
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+  }
 }
 
 #progress-amount {

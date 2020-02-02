@@ -97,7 +97,6 @@ nav{
       justify-content: flex-start;
       align-items: flex-end;
       padding: 0;
-      border: 1px solid #000;
       top: 55px;
       right: 0;
     }
@@ -120,6 +119,5 @@ nav{
   }
   @include mQ('415px') {
     width: 200px;
-    border: 1px solid #000;
   }
 }
