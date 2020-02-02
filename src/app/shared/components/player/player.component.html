@@ -1,6 +1,6 @@
 
 <section class="player shadow roudned" *ngIf="play | async as episode">
-  <audio [src]="episode.enclosure.link" #player preload="auto" appTimeLine
+  <audio [src]="episode.enclosure.link" #player autoplay preload="auto" appTimeLine
   (duration)="setTimeContent($event)"
   (timeElapse)="setTimeElapse($event)"
   (lengthMax)="buffered(bufferedAmount, $event)"
