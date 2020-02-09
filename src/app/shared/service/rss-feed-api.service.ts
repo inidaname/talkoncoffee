@@ -10,7 +10,7 @@ function genLink(episodeTitle: string): string {
     if (!e.match('[^A-Za-z0-9 ]')) {
       return e;
     }
-  }).join('').split('  ').join(' ').split(' ').join('_').split('__').join('_');
+  }).join('').split('  ').join(' ').split(' ').join('-').split('--').join('-');
 }
 
 @Injectable({
