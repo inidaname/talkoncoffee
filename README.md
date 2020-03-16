@@ -1,6 +1,5 @@
 # Talkoncoffee
 
-This site is manage by Netlify 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/2d7a25e0-3247-4ff0-ab84-cf861280d84d/deploy-status)](https://app.netlify.com/sites/upbeat-jackson-8f2a85/deploys)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0-rc.7.
