@@ -15,7 +15,7 @@
                     audio</a> instead.</p>
               </audio>
             </div> -->
-            <div [innerHTML]="item.description">
+            <div [innerHTML]="item.description | urlShorter">
             </div>
           </div>
         </section>
